@@ -13,14 +13,10 @@ const traits = [
 let pets = []
 
 // lager en funksjon som genererer et tilfeldig tall mellom min og max
-function randomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min
-}
+const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 // lager en funksjon som genererer et tilfeldig tall mellom 0 og lengden til arrayen
-function randomIndex(array) {
-    return randomNumber(0, array.length - 1)
-}
+const randomIndex = (array) => randomNumber(0, array.length - 1)
 
 // lager en funksjon som legger til et gitt antall tilfeldige elementer fra en array til en annen array uten duplikater
 function addMultipleUnique(array, items, amount) {
@@ -51,30 +47,21 @@ function generatePet() {
 generatePet()
 
 // lager en funksjon som finner det første dyret
-function findAnimal(animal) {
-    return pets.find(pet => pet.animal === animal)
-}
+const findAnimal = (animal) => pets.find(pet => pet.animal === animal)
 
 // lager en funksjon som finner det første dyret med en gitt farge
-function findFirstIndexByColor(color) {
-    return pets.findIndex(pet => pet.color === color)
-}
+const findFirstIndexByColor = (color) => pets.findIndex(pet => pet.color === color)
 
 
 // lager en funksjon som finner det siste dyret med en gitt alder
 // er vel ikke noe poeng og bruke både findLastIndex og findLast her?
-function findLastAnimalByAge(age) {
-    return pets.findLast(pet => pet.age === age)
-}
+const findLastAnimalByAge = (age) => pets.findLast(pet => pet.age === age)
 
 // lager en funksjon som finner alle dyrene med en gitt egenskap
-function filterByTraits(traits) {
-    return pets.filter(pet => pet.traits.includes(traits))
-}
-
+const filterByTraits = (traits) => pets.filter(pet => pet.traits.includes(traits))
 
 // lager en funksjon som console logger alle dyrene og deres egenskaper
-function consoleLogAllPets() {
+const consoleLogAllPets = () => {
     pets.map(pet => {
         console.log(`${pet.animal}en er ${pet.age} år gammel, ${pet.color} og har egenskapene ${pet.traits.join(', ')}`)
     })
