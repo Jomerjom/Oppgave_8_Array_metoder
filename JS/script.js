@@ -21,11 +21,11 @@ const randomIndex = (array) => randomNumber(0, array.length - 1)
 // lager en funksjon som legger til et gitt antall tilfeldige elementer fra en array til en annen array uten duplikater
 function addMultipleUnique(array, items, amount) {
     for (let i = 0; i < amount; i++) {
-        let item = items[randomIndex(items)]
-        while (array.includes(item)) {
-            item = items[randomIndex(items)]
-        }
-        array.push(item)
+        let item;
+        do {
+            item = items[randomIndex(items)];
+        } while (array.includes(item));
+        array.push(item);
     }
 }
 
