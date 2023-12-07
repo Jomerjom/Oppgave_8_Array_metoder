@@ -49,4 +49,35 @@ function generatePet() {
 
 // kaller på funksjonen
 generatePet()
-console.log(pets)
+
+// lager en funksjon som finner det første dyret
+function findAnimal(animal) {
+    return pets.find(pet => pet.animal === animal)
+}
+
+// lager en funksjon som finner det første dyret med en gitt farge
+function findFirstIndexByColor(color) {
+    return pets.findIndex(pet => pet.color === color)
+}
+
+
+// lager en funksjon som finner det siste dyret med en gitt alder
+// er vel ikke noe poeng og bruke både findLastIndex og findLast her?
+function findLastAnimalByAge(age) {
+    return pets.findLast(pet => pet.age === age)
+}
+
+// lager en funksjon som finner alle dyrene med en gitt egenskap
+function filterByTraits(traits) {
+    return pets.filter(pet => pet.traits.includes(traits))
+}
+
+
+// lager en funksjon som console logger alle dyrene og deres egenskaper
+function consoleLogAllPets() {
+    pets.map(pet => {
+        console.log(`${pet.animal}en er ${pet.age} år gammel, ${pet.color} og har egenskapene ${pet.traits.join(', ')}`)
+    })
+}
+
+consoleLogAllPets()
